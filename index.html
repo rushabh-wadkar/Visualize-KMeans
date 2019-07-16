@@ -13,6 +13,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img src="./resource/cluster.png" style="margin-right: 1em !important" width="30" height="30" alt="">
       <a class="navbar-brand" href="#">K-Means Visualization</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,7 +49,7 @@
       </div>
     </div>
 
-    <div class="jumbotron">
+    <div class="jumbotron" style="border-radius:0 !important; background-color: black; color: white !important; text-shadow: 1px solid rgba(0,0,0,0.3)">
       <h1 class="display-4">Hey There! Let's Cluster</h1>
       <p class="lead">K-means clustering is a type of unsupervised learning, which is used when you have unlabeled data (i.e., data without defined categories or groups). The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity.</p>
       <hr class="my-4">
@@ -57,9 +58,9 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <form>
-            <div class="form-inline col-md-6">
+            <div class="form-inline col-md-12">
               <div class="col-md-6">
                 <label for="inputEmail4"># of Clusters: <output id="rangevalue">10</output></label>
                 
@@ -73,38 +74,38 @@
               <input type="range" value="10" class="custom-range" min="1" max="100" step="1" id="nClusters" onchange="rangevalue.value=value">
             </div>
             <br>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label for="inputEmail4">Number of Clusters</label>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-secondary btn-sm active">
+                <label class="btn btn-primary btn-sm active">
                   <input type="radio" name="options" id="option1" autocomplete="off" checked> K-Means++
                 </label>
-                <label class="btn btn-secondary btn-sm">
+                <label class="btn btn-primary btn-sm">
                   <input type="radio" name="options" id="option2" autocomplete="off"> Random
                 </label>
               </div>
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label for="exampleInputEmail1">Number of Initilizations</label>
               <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="n_init">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label for="exampleInputEmail1">Maximum # of Iterations</label>
               <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="max_iterations">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label for="exampleInputEmail1">Tolerance Level</label>
               <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tolerance">
             </div>
-            <div class="form-group col-md-6">
-              <button type="button" class="btn btn-secondary btn-sm btn-block">Visualize</button>
+            <div class="form-group col-md-12">
+              <button type="button" class="btn btn-primary btn-sm btn-block">Visualize</button>
             </div>
           </form>
         </div>
-        <div class="col-md">
+        <div class="col-md-7">
           Visualize
         </div>
       </div>
@@ -116,5 +117,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
   </body>
 </html>
