@@ -59,22 +59,50 @@
       <div class="row">
         <div class="col-sm">
           <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Number of Clusters</label>
-                <input type="number" class="form-control" id="nClusters" placeholder="nClusters">
-              </div>
+            <div class="form-group col-md-6">
               <div class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="customSwitch1">
                 <label class="custom-control-label" for="customSwitch1">Hypertune #Clusters</label>
               </div>
+              <label for="inputEmail4">Number of Clusters</label>
+              <input type="range" class="custom-range" min="1" max="100" step="1" id="nClusters">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Number of Clusters</label>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary btn-sm active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> K-Means++
+                </label>
+                <label class="btn btn-secondary btn-sm">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> Random
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail1">N_Init</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="n_init">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail1">Maximum # of Iterations</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="max_iterations">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail1">Tolerance Level</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tolerance">
+            </div>
+            <div class="form-group col-md-6">
+              <button type="button" class="btn btn-secondary btn-sm btn-block">Visualize</button>
             </div>
           </form>
         </div>
         <div class="col-sm">
-          One of three columns
+          Visualize
         </div>
       </div>
+      <hr class="my-4">
     </div>
 
     <!-- Optional JavaScript -->
