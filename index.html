@@ -57,16 +57,22 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm">
+        <div class="col-md-6">
           <form>
-            <div class="form-group col-md-6">
-              <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                <label class="custom-control-label" for="customSwitch1">Hypertune #Clusters</label>
+            <div class="form-inline col-md-6">
+              <div class="col-md-6">
+                <label for="inputEmail4"># of Clusters: <output id="rangevalue">10</output></label>
+                
               </div>
-              <label for="inputEmail4">Number of Clusters</label>
-              <input type="range" class="custom-range" min="1" max="100" step="1" id="nClusters">
+              <div class="col-md-6">
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                  <label class="custom-control-label" for="customSwitch1">Hypertune</label>
+                </div>
+              </div>
+              <input type="range" value="10" class="custom-range" min="1" max="100" step="1" id="nClusters" onchange="rangevalue.value=value">
             </div>
+            <br>
             <div class="form-group col-md-6">
               <label for="inputEmail4">Number of Clusters</label>
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -80,7 +86,7 @@
             </div>
 
             <div class="form-group col-md-6">
-              <label for="exampleInputEmail1">N_Init</label>
+              <label for="exampleInputEmail1">Number of Initilizations</label>
               <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="n_init">
             </div>
 
@@ -98,7 +104,7 @@
             </div>
           </form>
         </div>
-        <div class="col-sm">
+        <div class="col-md">
           Visualize
         </div>
       </div>
