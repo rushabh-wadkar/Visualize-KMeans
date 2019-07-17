@@ -10,3 +10,9 @@ body::-webkit-scrollbar-thumb {
   background-color: black;
   outline: 1px solid blue;
 }
+
+#moreKnowledge {
+	display: none;
+}
+
+

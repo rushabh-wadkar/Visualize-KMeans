@@ -51,14 +51,18 @@
 
     <div class="jumbotron" style="border-radius:0 !important; background-color: black; color: white !important; text-shadow: 1px solid rgba(0,0,0,0.3)">
       <h1 class="display-4">Hey There! Let's Cluster</h1>
-      <p class="lead">K-means clustering is a type of unsupervised learning, which is used when you have unlabeled data (i.e., data without defined categories or groups). The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity.</p>
-      <hr class="my-4">
-      <p>This utility lets you upload csv file(dataset), optimize the tuning paramaters for kmeans and visualize the clusters as recognized by the algorithm.</p>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" onclick="checkornotfunc()" id="ViewMoreSwitch">
+        <label class="custom-control-label" for="ViewMoreSwitch">Want to know More?</label>
+      </div>
+        <p class="lead" id='moreKnowledge'>K-means clustering is a type of unsupervised learning, which is used when you have unlabeled data (i.e., data without defined categories or groups). The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable K. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided. Data points are clustered based on feature similarity.</p>
+        <hr class="my-4" id="moreKnowledge">
+        <p>This utility lets you upload csv file(dataset), optimize the tuning paramaters for kmeans and visualize the clusters as recognized by the algorithm.</p>
+      
     </div>
-
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" id="controller">
           <form>
             <div class="form-inline col-md-12">
               <div class="col-md-6">
@@ -75,13 +79,13 @@
             </div>
             <br>
             <div class="form-group col-md-12">
-              <label for="inputEmail4">Number of Clusters</label>
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label for="inputEmail4">Number of Clusters: </label>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="float: right !important;">
                 <label class="btn btn-primary btn-sm active">
-                  <input type="radio" name="options" id="option1" autocomplete="off" checked> K-Means++
+                  <input type="radio" name="options" class="opt" id="option1" autocomplete="off" checked> K-Means++
                 </label>
                 <label class="btn btn-primary btn-sm">
-                  <input type="radio" name="options" id="option2" autocomplete="off"> Random
+                  <input type="radio" name="options" class="opt" id="option2" autocomplete="off"> Random
                 </label>
               </div>
             </div>
@@ -101,7 +105,7 @@
               <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tolerance">
             </div>
             <div class="form-group col-md-12">
-              <button type="button" class="btn btn-primary btn-sm btn-block">Visualize</button>
+              <button type="button" id="visualizeBtn" class="btn btn-primary btn-sm btn-block" onclick='visualize()'>Visualize</button>
             </div>
           </form>
         </div>
@@ -112,11 +116,28 @@
       <hr class="my-4">
     </div>
 
+    <!-- Toasts here -->
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded mr-2" alt="...">
+        <strong class="mr-auto">Bootstrap</strong>
+        <small class="text-muted">11 mins ago</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Hello, world! This is a toast message.
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js" crossorigin="anonymous"></script-->
     <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
